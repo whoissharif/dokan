@@ -1,4 +1,5 @@
 import 'package:dokan/app/modules/common/widgets/app_elevated_button.dart';
+import 'package:dokan/app/routes/app_pages.dart';
 import 'package:dokan/core/utils/size_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -75,7 +76,7 @@ class LoginView extends GetView<AuthenticationController> {
                 50.hs,
                 TextButton(
                   onPressed: () {
-                    // Navigate to Create New Account screen
+                    Get.toNamed(Routes.REGISTRATION);
                   },
                   child: Text(
                     'Create New Account',

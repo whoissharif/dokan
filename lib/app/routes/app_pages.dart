@@ -1,3 +1,4 @@
+import 'package:dokan/app/modules/authentication/views/registration_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/authentication/bindings/authentication_binding.dart';
@@ -21,6 +22,11 @@ class AppPages {
     GetPage(
       name: _Paths.LOGIN,
       page: () => const LoginView(),
+      binding: AuthenticationBinding(),
+    ),
+    GetPage(
+      name: _Paths.REGISTRATION,
+      page: () => const RegistrationView(),
       binding: AuthenticationBinding(),
     ),
   ];
