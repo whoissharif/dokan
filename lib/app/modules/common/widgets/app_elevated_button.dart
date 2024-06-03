@@ -7,7 +7,7 @@ class AppElevatedButton extends StatelessWidget {
     required this.onTap,
     this.text = 'Continue',
     this.color = AppColors.accentColor,
-    this.padding = 16.0,
+    this.padding = 20.0,
     this.fontSize = 14,
     this.radius,
     this.isLoading,
@@ -45,6 +45,7 @@ class AppElevatedButton extends StatelessWidget {
                   style: theme.textTheme.titleMedium!.copyWith(
                     fontSize: fontSize,
                     color: Colors.white,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
         ),
