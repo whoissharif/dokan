@@ -56,7 +56,9 @@ class LoginView extends GetView<AuthenticationController> {
                 20.hs,
                 AppElevatedButton(
                   text: 'Login',
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed(Routes.BOTTOM_NAV);
+                  },
                 ),
                 50.hs,
                 Row(

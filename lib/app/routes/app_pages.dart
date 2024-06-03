@@ -1,8 +1,10 @@
-import 'package:dokan/app/modules/authentication/views/registration_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/authentication/bindings/authentication_binding.dart';
 import '../modules/authentication/views/login_view.dart';
+import '../modules/authentication/views/registration_view.dart';
+import '../modules/bottom_nav/bindings/bottom_nav_binding.dart';
+import '../modules/bottom_nav/views/bottom_nav_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 
@@ -28,6 +30,11 @@ class AppPages {
       name: _Paths.REGISTRATION,
       page: () => const RegistrationView(),
       binding: AuthenticationBinding(),
+    ),
+    GetPage(
+      name: _Paths.BOTTOM_NAV,
+      page: () =>  BottomNavView(),
+      binding: BottomNavBinding(),
     ),
   ];
 }
