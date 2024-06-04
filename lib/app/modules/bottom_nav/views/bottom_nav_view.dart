@@ -1,3 +1,4 @@
+import 'package:dokan/app/modules/product/views/product_view.dart';
 import 'package:flutter/material.dart';
 import '../../../../theme/app_color.dart';
 import 'widget/nav_item.dart';
@@ -14,7 +15,7 @@ class _BottomNavViewState extends State<BottomNavView> {
   late int _selectedIndex = 0;
 
   final List<Widget> _screens = [
-    const Home(),
+    ProductView(),
     const Explore(),
     const Cart(),
     const Profile(),

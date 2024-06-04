@@ -5,20 +5,20 @@ import 'package:google_fonts/google_fonts.dart';
 final lightTheme = ThemeData(
   useMaterial3: true,
   scaffoldBackgroundColor: AppColors.backgroundColor,
-  // appBarTheme: AppBarTheme(
-  //   scrolledUnderElevation: 0,
-  //   backgroundColor: mainLight,
-  //   foregroundColor: primaryTextLight,
-  //   titleTextStyle: GoogleFonts.poppins(
-  //     textStyle: const TextStyle(
-  //       fontSize: 18,
-  //       // fontWeight: FontWeight.w600,
-  //       color: mainDark,
-  //     ),
-  //   ),
-  //   elevation: 0,
-  //   centerTitle: true,
-  // ),
+  appBarTheme: AppBarTheme(
+    scrolledUnderElevation: 0,
+    backgroundColor: AppColors.backgroundColor,
+    foregroundColor: AppColors.primaryText,
+    titleTextStyle: GoogleFonts.poppins(
+      textStyle: const TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w600,
+        color: AppColors.primaryText,
+      ),
+    ),
+    elevation: 0,
+    centerTitle: true,
+  ),
 
   textTheme: TextTheme(
     // Title styles
