@@ -29,7 +29,7 @@ class ProductView extends GetView<ProductController> {
                     ? const CircularProgressIndicator()
                     : GridView.builder(
                         shrinkWrap: true,
-                        itemCount: controller.products.length,
+                        itemCount: controller.filteredProducts.length,
                         padding: EdgeInsets.zero,
                         physics: const NeverScrollableScrollPhysics(),
                         gridDelegate:
@@ -40,10 +40,10 @@ class ProductView extends GetView<ProductController> {
                           crossAxisSpacing: 14,
                         ),
                         itemBuilder: (context, i) {
-                          return controller.products.isEmpty
+                          return controller.filteredProducts.isEmpty
                               ? const SizedBox()
                               : ProductGridCard(
-                                  product: controller.products[i],
+                                  product: controller.filteredProducts[i],
                                 );
                         }),
               ),
