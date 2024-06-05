@@ -13,9 +13,12 @@ class FilterBar extends StatelessWidget {
     final theme = Theme.of(context);
     return InkWell(
       onTap: () {
-        // Get.bottomSheet(ProductFilterBottomSheet());
         showModalBottomSheet(
-            context: context, builder: (c) => ProductFilterBottomSheet());
+          context: context,
+          builder: (c) => ProductFilterBottomSheet(),
+          showDragHandle: true,
+          
+        );
       },
       child: Container(
         padding: const EdgeInsets.all(20),

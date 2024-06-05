@@ -1,4 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cached_network_image/cached_network_image.dart' as cni;
 import 'package:dokan/core/utils/size_extension.dart';
 import 'package:dokan/theme/app_color.dart';
 import 'package:flutter/material.dart';
@@ -40,12 +40,17 @@ class ProductGridCard extends StatelessWidget {
                     topLeft: Radius.circular(12),
                     topRight: Radius.circular(12),
                   ),
-                  child: CachedNetworkImage(
-                    imageUrl:
-                        'https://cdn.shopify.com/s/files/1/0023/1342/0889/products/ClassicShirt_White_1_5cd5bf10-af18-4d0b-a477-bc3422d8401a.jpg?v=1688497040',
+                  child: cni.CachedNetworkImage(
+                    // imageUrl:
+                    //     'https://cdn.shopify.com/s/files/1/0023/1342/0889/products/ClassicShirt_White_1_5cd5bf10-af18-4d0b-a477-bc3422d8401a.jpg?v=1688497040',
+                    imageUrl: product.images!.last.src!,
                     fit: BoxFit.cover,
-                    // imageUrl: product.images!.last.src!,
-                    errorWidget: (context, url, error) => const Placeholder(),
+                    errorWidget: (context, url, error) =>
+                        cni.CachedNetworkImage(
+                      imageUrl:
+                          'https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png',
+                          fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),

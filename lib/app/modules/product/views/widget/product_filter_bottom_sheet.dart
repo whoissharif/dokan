@@ -1,3 +1,4 @@
+import 'package:dokan/app/modules/common/widgets/app_outlined_button.dart';
 import 'package:dokan/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,11 +22,18 @@ class ProductFilterBottomSheet extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            'Filter',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 8.0, left: 16),
+            child: Text(
+              'Filter',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: AppColors.primaryText,
+              ),
+            ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 4),
           Obx(
             () => Column(
               children: [
@@ -78,9 +86,9 @@ class ProductFilterBottomSheet extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: TextButton(
-                  onPressed: () => Get.back(),
-                  child: const Text('Cancel'),
+                child: AppOutlinedButton(
+                  onTap: () => Get.back(),
+                  text: 'Cancel',
                 ),
               ),
               const SizedBox(width: 16),
