@@ -84,4 +84,61 @@ class AuthRepository {
       return const Left(AppError.unknownError);
     }
   }
+
+  Future<Either<AppError, String>> register({
+    required String userName,
+    required String email,
+    required String password,
+  }) async {
+    var body = {"username": userName, "email": email, "password": password};
+    var headers = {"Content-Type": "application/json"};
+    try {
+      log('$body');
+      final response = await ApiClient()
+          .postJsonRequest(AppUrls.register, body: body, headers: headers);
+      log(response.body);
+      log(response.statusCode.toString());
+      final decodedData = jsonDecode(response.body);
+      if (response.statusCode == 200) {
+        Get.snackbar(
+          'Success',
+          decodedData["message"],
+          isDismissible: true,
+          backgroundColor: Colors.teal,
+          colorText: Colors.white,
+          snackPosition: SnackPosition.TOP,
+          margin: const EdgeInsets.only(bottom: 20, left: 16, right: 16),
+        );
+        Get.offAllNamed(Routes.LOGIN);
+        return const Right('');
+      } else {
+        debugPrint(response.statusCode.toString());
+        if (!Get.isSnackbarOpen) {
+          Get.snackbar(
+            'Registration Failed',
+            '${decodedData['message']}',
+            isDismissible: true,
+            backgroundColor: Colors.red,
+            colorText: Colors.white,
+            snackPosition: SnackPosition.BOTTOM,
+            margin: const EdgeInsets.only(bottom: 20, left: 16, right: 16),
+          );
+        }
+        return const Left(AppError.unknownError);
+      }
+    } catch (e) {
+      if (!Get.isSnackbarOpen) {
+        Get.snackbar(
+          'Failed',
+          'Something Went Wrong',
+          isDismissible: true,
+          backgroundColor: Colors.red,
+          colorText: Colors.white,
+          snackPosition: SnackPosition.BOTTOM,
+          margin: const EdgeInsets.only(bottom: 20, left: 16, right: 16),
+        );
+      }
+      return const Left(AppError.unknownError);
+    }
+  }
 }
