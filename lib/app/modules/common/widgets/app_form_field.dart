@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../theme/app_color.dart';
 
 class AppFormField extends StatefulWidget {
@@ -26,17 +25,21 @@ class AppFormField extends StatefulWidget {
 
 class _AppFormFieldState extends State<AppFormField> {
   bool obscureText = true;
+
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 5,
+      elevation: 15,
       shadowColor: AppColors.shadowColor,
-      color: Colors.white,
+      color: Colors.transparent,
       borderRadius: BorderRadius.circular(12),
-      child: TextField(
-        // controller: _emailController,
-        obscureText: widget.isPassword == true && obscureText ? true : false,
+      child: TextFormField(
+        validator: widget.validator,
+        controller: widget.controller,
+        obscureText: widget.isPassword == true && obscureText,
         decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
           prefixIcon: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Image.asset(
@@ -65,9 +68,13 @@ class _AppFormFieldState extends State<AppFormField> {
               : const SizedBox(),
           hintText: widget.hint,
           hintStyle: Theme.of(context).textTheme.labelMedium,
-          border: InputBorder.none,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide.none,
+          ),
           contentPadding: const EdgeInsets.all(20),
         ),
+        keyboardType: widget.keyboardType,
       ),
     );
   }
