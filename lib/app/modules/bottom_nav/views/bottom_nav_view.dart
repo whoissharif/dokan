@@ -1,3 +1,4 @@
+import 'package:dokan/app/modules/my_account/views/my_account_view.dart';
 import 'package:dokan/app/modules/product/views/product_view.dart';
 import 'package:flutter/material.dart';
 import '../../../../theme/app_color.dart';
@@ -18,7 +19,7 @@ class _BottomNavViewState extends State<BottomNavView> {
     ProductView(),
     const Explore(),
     const Cart(),
-    const Profile(),
+    MyAccountView(),
   ];
 
   void _onItemTapped(int index) {
@@ -30,6 +31,7 @@ class _BottomNavViewState extends State<BottomNavView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       extendBody: true,
       body: _screens[_selectedIndex],
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

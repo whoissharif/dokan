@@ -25,7 +25,7 @@ class ApiClient {
     );
   }
 
-    Future<http.Response> postJsonRequest(
+  Future<http.Response> postJsonRequest(
     String url, {
     Map<String, dynamic>? body,
     Map<String, String>? headers,
@@ -35,6 +35,32 @@ class ApiClient {
       body: json.encode(body),
       headers: headers,
       // encoding: Encoding.getByName("utf-8"),
+    );
+  }
+
+  /// Put
+  Future<http.Response> putRequest(
+    String url, {
+    Map<String, dynamic>? body,
+    Map<String, String>? headers,
+  }) async {
+    return http.put(
+      Uri.parse(url),
+      body: body,
+      headers: headers,
+    );
+  }
+
+  /// Put
+  Future<http.Response> putJsonRequest(
+    String url, {
+    Map<String, dynamic>? body,
+    Map<String, String>? headers,
+  }) async {
+    return http.put(
+      Uri.parse(url),
+      body: json.encode(body),
+      headers: headers,
     );
   }
 }

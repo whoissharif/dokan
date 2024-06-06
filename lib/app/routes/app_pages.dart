@@ -7,6 +7,8 @@ import '../modules/bottom_nav/bindings/bottom_nav_binding.dart';
 import '../modules/bottom_nav/views/bottom_nav_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/my_account/bindings/my_account_binding.dart';
+import '../modules/my_account/views/my_account_view.dart';
 import '../modules/product/bindings/product_binding.dart';
 import '../modules/product/views/product_view.dart';
 
@@ -42,6 +44,11 @@ class AppPages {
       name: _Paths.PRODUCT,
       page: () => ProductView(),
       binding: ProductBinding(),
+    ),
+    GetPage(
+      name: _Paths.MY_ACCOUNT,
+      page: () => MyAccountView(),
+      binding: MyAccountBinding(),
     ),
   ];
 }
