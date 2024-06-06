@@ -1,4 +1,6 @@
 import 'package:dokan/app/modules/my_account/views/my_account_view.dart';
+import 'package:dokan/app/modules/product/views/cart_view.dart';
+import 'package:dokan/app/modules/product/views/explore_view.dart';
 import 'package:dokan/app/modules/product/views/product_view.dart';
 import 'package:flutter/material.dart';
 import '../../../../theme/app_color.dart';
@@ -17,8 +19,8 @@ class _BottomNavViewState extends State<BottomNavView> {
 
   final List<Widget> _screens = [
     ProductView(),
-    const Explore(),
-    const Cart(),
+    const ExploreView(),
+    const CartView(),
     MyAccountView(),
   ];
 
@@ -91,42 +93,5 @@ class _BottomNavViewState extends State<BottomNavView> {
         ),
       ),
     );
-  }
-}
-
-// Screens for the different bottom navigation items
-class Home extends StatelessWidget {
-  const Home({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Text('Home');
-  }
-}
-
-class Explore extends StatelessWidget {
-  const Explore({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Text('Explore');
-  }
-}
-
-class Cart extends StatelessWidget {
-  const Cart({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Text('Carts');
-  }
-}
-
-class Profile extends StatelessWidget {
-  const Profile({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Text('Profile');
   }
 }

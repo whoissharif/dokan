@@ -1,3 +1,4 @@
+import 'package:dokan/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 class NavItem extends StatelessWidget {
@@ -20,9 +21,9 @@ class NavItem extends StatelessWidget {
       onTap: onTap,
       child: Image.asset(
         imageUrl,
-        height: 22,
-        width: 22,
-        color: selectedIndex == index ? Colors.blue : Colors.grey,
+        height: 24,
+        width: 24,
+        color: selectedIndex == index ? AppColors.accentColor : Colors.grey,
       ),
     );
   }
