@@ -30,6 +30,9 @@ class _AppBorderedFormFieldState extends State<AppBorderedFormField> {
       readOnly: widget.readOnly,
       controller: widget.controller,
       obscureText: widget.isPassword == true && obscureText,
+      style: widget.readOnly
+          ? const TextStyle(color: Colors.grey)
+          : const TextStyle(),
       decoration: InputDecoration(
         fillColor: Colors.white,
         suffixIcon: widget.isPassword == true
@@ -54,7 +57,23 @@ class _AppBorderedFormFieldState extends State<AppBorderedFormField> {
         hintStyle: Theme.of(context).textTheme.labelMedium,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          // borderSide: BorderSide.none,
+          borderSide: BorderSide(
+              color: widget.readOnly
+                  ? Colors.grey.withOpacity(.2)
+                  : AppColors.accentColor),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+              color:
+                  widget.readOnly ? Colors.grey.withOpacity(.2) : Colors.grey),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+              color: widget.readOnly
+                  ? Colors.grey.withOpacity(.2)
+                  : AppColors.accentColor),
         ),
         contentPadding: const EdgeInsets.all(20),
       ),

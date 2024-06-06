@@ -25,7 +25,8 @@ class AuthRepository {
       log(response.body);
       final decodedData = jsonDecode(response.body);
       if (response.statusCode == 200) {
-        GetStorage().write("token", decodedData['token'].toString());
+        GetStorage().write("token", decodedData['token']);
+        debugPrint(GetStorage().read('token'));
         Fluttertoast.showToast(
             msg: "Successfully Logged In",
             toastLength: Toast.LENGTH_SHORT,

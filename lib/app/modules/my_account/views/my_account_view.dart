@@ -66,7 +66,7 @@ class MyAccountView extends GetView<MyAccountController> {
                           ),
                           40.hs,
                           Text(
-                            controller.profileModel.value!.username ?? '',
+                            controller.profileModel.value!.firstName ?? '',
                             style: const TextStyle(
                               fontSize: 24.0,
                               color: AppColors.primaryText,
