@@ -84,7 +84,7 @@ class ProductGridCard extends StatelessWidget {
                         ),
                         12.ws,
                         Text(
-                          '\$${product.regularPrice}',
+                          '\$${product.price}',
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,

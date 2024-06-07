@@ -46,10 +46,9 @@ class ProductController extends GetxController {
           (a, b) => double.parse(b.price!).compareTo(double.parse(a.price!)));
     }
 
-    // best selling filter
+    // best selling filter (descending)
     if (isBestSelling.value) {
-      filteredProducts.value =
-          filteredProducts.where((product) => product.totalSales! > 0).toList();
+      filteredProducts.sort((b, a) => a.totalSales!.compareTo(b.totalSales!));
     }
   }
 }
