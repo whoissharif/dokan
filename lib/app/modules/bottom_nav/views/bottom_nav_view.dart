@@ -33,7 +33,7 @@ class _BottomNavViewState extends State<BottomNavView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       extendBody: true,
       body: _screens[_selectedIndex],
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

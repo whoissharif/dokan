@@ -18,7 +18,7 @@ class MyAccountView extends GetView<MyAccountController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('My Account'),
       ),
