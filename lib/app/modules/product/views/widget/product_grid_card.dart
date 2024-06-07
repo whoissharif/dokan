@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart' as cni;
-import 'package:dokan/core/utils/size_extension.dart';
-import 'package:dokan/theme/app_color.dart';
+import '../../../../../core/utils/size_extension.dart';
+import '../../../../../theme/app_color.dart';
 import 'package:flutter/material.dart';
 import '../../model/product_model.dart';
 

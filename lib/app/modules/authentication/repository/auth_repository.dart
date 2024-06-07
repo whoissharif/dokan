@@ -1,9 +1,7 @@
 import 'dart:convert';
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
-import 'package:dokan/core/utils/app_urls.dart';
-import 'package:dokan/theme/app_color.dart';
+import '../../../../core/utils/app_urls.dart';
+import '../../../../theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -22,7 +20,6 @@ class AuthRepository {
         body: {"username": username, "password": password},
         headers: {"Content-Type": "application/x-www-form-urlencoded"},
       );
-      log(response.body);
       final decodedData = jsonDecode(response.body);
       if (response.statusCode == 200) {
         GetStorage().write("token", decodedData['token']);
@@ -94,11 +91,8 @@ class AuthRepository {
     var body = {"username": userName, "email": email, "password": password};
     var headers = {"Content-Type": "application/json"};
     try {
-      log('$body');
       final response = await ApiClient()
           .postJsonRequest(AppUrls.register, body: body, headers: headers);
-      log(response.body);
-      log(response.statusCode.toString());
       final decodedData = jsonDecode(response.body);
       if (response.statusCode == 200) {
         Get.snackbar(

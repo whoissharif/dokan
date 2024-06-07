@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:dokan/app/modules/product/model/product_model.dart';
+import '../model/product_model.dart';
 import 'package:flutter/services.dart';
 
 class ProductRepository {

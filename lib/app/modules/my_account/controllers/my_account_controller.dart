@@ -1,6 +1,4 @@
-import 'dart:developer';
-
-import 'package:dokan/app/modules/my_account/repository/account_repository.dart';
+import '../repository/account_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -41,7 +39,6 @@ class MyAccountController extends GetxController {
     res.fold(
       (l) {
         isProfileLoading.value = false;
-        log('Profile error');
         profileError.value = l;
       },
       (r) {

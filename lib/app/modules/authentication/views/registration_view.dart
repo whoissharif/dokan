@@ -1,9 +1,10 @@
-import 'package:dokan/app/modules/common/widgets/app_elevated_button.dart';
-import 'package:dokan/core/utils/size_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../../../core/utils/input_validator.dart';
+import '../../../../core/utils/size_extension.dart';
 import '../../../../theme/app_color.dart';
+import '../../common/widgets/app_elevated_button.dart';
 import '../../common/widgets/app_form_field.dart';
 import '../controllers/authentication_controller.dart';
 import 'widget/social_login_button.dart';
@@ -117,7 +118,6 @@ class _RegistrationViewState extends State<RegistrationView> {
                       text: 'Sign Up',
                       onTap: () async {
                         if (_formKey.currentState!.validate()) {
-                          print('validated');
                           await controller.signUp();
                         }
                       },

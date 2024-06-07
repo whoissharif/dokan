@@ -1,4 +1,4 @@
-import 'package:dokan/theme/app_color.dart';
+import '../../../../theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 class CartView extends StatelessWidget {

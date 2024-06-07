@@ -17,12 +17,6 @@ class AuthenticationController extends GetxController {
       TextEditingController();
   RxBool isLoading = false.obs;
 
-  @override
-  void onInit() {
-    print('auth controller - init');
-    super.onInit();
-  }
-
   Future<void> signIn() async {
     isLoading.value = true;
     var res = await AuthRepository().login(

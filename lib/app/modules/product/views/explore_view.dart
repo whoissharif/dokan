@@ -1,5 +1,6 @@
-import 'package:dokan/theme/app_color.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../theme/app_color.dart';
 
 class ExploreView extends StatelessWidget {
   const ExploreView({super.key});

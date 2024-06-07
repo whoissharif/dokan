@@ -1,5 +1,5 @@
-import 'package:dokan/app/modules/common/widgets/app_outlined_button.dart';
-import 'package:dokan/theme/app_color.dart';
+import '../../../common/widgets/app_outlined_button.dart';
+import '../../../../../theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

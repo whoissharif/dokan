@@ -1,10 +1,12 @@
 import 'dart:developer';
 
-import 'package:dokan/app/modules/common/widgets/app_elevated_button.dart';
-import 'package:dokan/app/routes/app_pages.dart';
-import 'package:dokan/core/utils/input_validator.dart';
-import 'package:dokan/core/utils/size_extension.dart';
+import '../../common/widgets/app_elevated_button.dart';
+import '../../../routes/app_pages.dart';
+import '../../../../core/utils/input_validator.dart';
+import '../../../../core/utils/size_extension.dart';
+import '../../../../theme/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import '../../common/widgets/app_form_field.dart';
 import '../controllers/authentication_controller.dart';
@@ -37,16 +39,16 @@ class _LoginViewState extends State<LoginView> {
                 children: <Widget>[
                   100.hs,
                   Image.asset(
-                    'assets/images/logo_full.png',
-                    height: 80,
+                    'assets/images/logo_full_big.png',
+                    height: 56,
                   ),
-                  85.hs,
+                  100.hs,
                   Text(
                     'Sign In',
                     style:
                         theme.textTheme.headlineMedium!.copyWith(fontSize: 22),
                   ),
-                  30.hs,
+                  40.hs,
                   AppFormField(
                     controller: controller.usernameController,
                     hint: 'Username',
@@ -67,7 +69,16 @@ class _LoginViewState extends State<LoginView> {
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Fluttertoast.showToast(
+                            msg: "Password recovery is coming soon",
+                            toastLength: Toast.LENGTH_SHORT,
+                            gravity: ToastGravity.BOTTOM,
+                            timeInSecForIosWeb: 1,
+                            backgroundColor: AppColors.accentColor,
+                            textColor: Colors.white,
+                            fontSize: 16.0);
+                      },
                       child: const Text(
                         'Forgot Password?',
                         style: TextStyle(color: Colors.grey),
@@ -82,7 +93,6 @@ class _LoginViewState extends State<LoginView> {
                         final form = _formKey.currentState;
                         if (form != null && form.validate()) {
                           await controller.signIn();
-                          log('Form is valid');
                         } else {
                           log('Form is not valid');
                         }
@@ -96,12 +106,30 @@ class _LoginViewState extends State<LoginView> {
                     children: <Widget>[
                       SocialLoginButton(
                         iconUrl: 'assets/images/fb.png',
-                        onPressed: () {},
+                        onPressed: () {
+                          Fluttertoast.showToast(
+                              msg: "Facebook login is coming soon",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: AppColors.accentColor,
+                              textColor: Colors.white,
+                              fontSize: 16.0);
+                        },
                       ),
                       20.ws,
                       SocialLoginButton(
                         iconUrl: 'assets/images/google.png',
-                        onPressed: () {},
+                        onPressed: () {
+                          Fluttertoast.showToast(
+                              msg: "Google login is coming soon",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: AppColors.accentColor,
+                              textColor: Colors.white,
+                              fontSize: 16.0);
+                        },
                       ),
                     ],
                   ),

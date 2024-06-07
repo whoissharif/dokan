@@ -1,12 +1,12 @@
-import 'package:dokan/app/modules/product/model/product_model.dart';
-import 'package:dokan/app/modules/product/repository/product_repository.dart';
+import '../model/product_model.dart';
+import '../repository/product_repository.dart';
 import 'package:get/get.dart';
 
 class ProductController extends GetxController {
   var products = <ProductModel>[].obs;
   var filteredProducts = <ProductModel>[].obs;
   var isLoading = true.obs;
-  var selectedSortOption = 'Newest'.obs;
+  var selectedSortOption = ''.obs;
   var selectedPriceRange = ''.obs;
   var isBestSelling = false.obs;
 

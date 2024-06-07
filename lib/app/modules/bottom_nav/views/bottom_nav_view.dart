@@ -1,7 +1,7 @@
-import 'package:dokan/app/modules/my_account/views/my_account_view.dart';
-import 'package:dokan/app/modules/product/views/cart_view.dart';
-import 'package:dokan/app/modules/product/views/explore_view.dart';
-import 'package:dokan/app/modules/product/views/product_view.dart';
+import '../../my_account/views/my_account_view.dart';
+import '../../product/views/cart_view.dart';
+import '../../product/views/explore_view.dart';
+import '../../product/views/product_view.dart';
 import 'package:flutter/material.dart';
 import '../../../../theme/app_color.dart';
 import 'widget/nav_item.dart';

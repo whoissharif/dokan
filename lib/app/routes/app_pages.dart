@@ -27,7 +27,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.LOGIN,
-      page: () => LoginView(),
+      page: () => const LoginView(),
       binding: AuthenticationBinding(),
     ),
     GetPage(
@@ -37,7 +37,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.BOTTOM_NAV,
-      page: () => BottomNavView(),
+      page: () => const BottomNavView(),
       binding: BottomNavBinding(),
     ),
     GetPage(

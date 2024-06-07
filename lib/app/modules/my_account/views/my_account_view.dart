@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dokan/core/utils/size_extension.dart';
-import 'package:dokan/theme/app_color.dart';
+import '../../../../core/utils/size_extension.dart';
+import '../../../../theme/app_color.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -66,7 +66,11 @@ class MyAccountView extends GetView<MyAccountController> {
                           ),
                           40.hs,
                           Text(
-                            controller.profileModel.value!.firstName ?? '',
+                            controller.profileModel.value!.firstName == null ||
+                                    controller
+                                        .profileModel.value!.firstName!.isEmpty
+                                ? '${controller.profileModel.value!.username}'
+                                : '${controller.profileModel.value!.firstName} ${controller.profileModel.value!.lastName}',
                             style: const TextStyle(
                               fontSize: 24.0,
                               color: AppColors.primaryText,

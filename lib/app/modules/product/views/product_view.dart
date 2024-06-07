@@ -1,5 +1,5 @@
-import 'package:dokan/app/modules/product/views/widget/product_grid_card.dart';
-import 'package:dokan/core/utils/size_extension.dart';
+import 'widget/product_grid_card.dart';
+import '../../../../core/utils/size_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';

@@ -1,8 +1,8 @@
-import 'package:dokan/app/modules/common/widgets/app_bordered_form_field.dart';
-import 'package:dokan/app/modules/common/widgets/app_elevated_button.dart';
-import 'package:dokan/app/modules/common/widgets/app_outlined_button.dart';
-import 'package:dokan/app/modules/my_account/controllers/my_account_controller.dart';
-import 'package:dokan/core/utils/size_extension.dart';
+import '../../../common/widgets/app_bordered_form_field.dart';
+import '../../../common/widgets/app_elevated_button.dart';
+import '../../../common/widgets/app_outlined_button.dart';
+import '../../controllers/my_account_controller.dart';
+import '../../../../../core/utils/size_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

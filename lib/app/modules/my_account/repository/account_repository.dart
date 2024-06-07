@@ -1,8 +1,7 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'dart:io';
 import 'package:dartz/dartz.dart';
-import 'package:dokan/core/utils/app_urls.dart';
+import '../../../../core/utils/app_urls.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
@@ -18,7 +17,6 @@ class AccountRepository {
       Map<String, String> headers = {"Authorization": 'Bearer $token'};
       final response =
           await ApiClient().getRequest(AppUrls.profile, headers: headers);
-      log('Profile repo: ${response.body}');
       final decodedData = jsonDecode(response.body);
       if (response.statusCode == 200) {
         GetStorage().write("id", decodedData['id'].toString());
@@ -52,15 +50,12 @@ class AccountRepository {
         "Content-Type": "application/json"
       };
 
-      log('$body');
       int userId = int.parse(GetStorage().read("id"));
       final response = await ApiClient().putJsonRequest(
         '${AppUrls.editProfile}$userId',
         body: body,
         headers: headers,
       );
-      log(response.body);
-      log(response.statusCode.toString());
       final decodedData = jsonDecode(response.body);
       if (response.statusCode == 200) {
         Fluttertoast.showToast(

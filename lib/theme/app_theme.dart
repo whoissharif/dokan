@@ -1,6 +1,7 @@
-import 'package:dokan/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'app_color.dart';
 
 final lightTheme = ThemeData(
   useMaterial3: true,
@@ -11,7 +12,7 @@ final lightTheme = ThemeData(
     foregroundColor: AppColors.primaryText,
     titleTextStyle: GoogleFonts.poppins(
       textStyle: const TextStyle(
-        fontSize: 18,
+        fontSize: 22,
         fontWeight: FontWeight.w600,
         color: AppColors.primaryText,
       ),

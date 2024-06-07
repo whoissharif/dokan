@@ -1,4 +1,4 @@
-import 'package:dokan/core/utils/size_extension.dart';
+import '../../../../../core/utils/size_extension.dart';
 import 'package:flutter/material.dart';
 import '../../../../../theme/app_color.dart';
 import 'product_filter_bottom_sheet.dart';
@@ -17,7 +17,7 @@ class FilterBar extends StatelessWidget {
           context: context,
           builder: (c) => ProductFilterBottomSheet(),
           showDragHandle: true,
-          
+          backgroundColor: Colors.white,
         );
       },
       child: Container(
